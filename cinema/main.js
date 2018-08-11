@@ -21,7 +21,7 @@ addEventListener("mousemove", function(event){
 });
 
 let compra = new Lista();
-let preco = 12;
+let valorIngresso = 12;
 
 let fileiras = [];
 let todascadeiras = [];
@@ -40,7 +40,6 @@ for(let i = 0; i < nFileiras; i++){
 }
 
 function clock(){
-    console.log('iae');
     for(let i = 0; i < todascadeiras.length; i++){
         if(Math.abs(todascadeiras[i].x - mouse.xpos) < raio / 2 && Math.abs(todascadeiras[i].y - mouse.ypos) < raio / 2){
             todascadeiras[i].clicada();
@@ -60,6 +59,7 @@ function animate(){
         fileiras[i].draw();
     }
     
+    compra.draw();
     
 }
 animate()

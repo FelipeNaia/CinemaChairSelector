@@ -1,5 +1,6 @@
 class Cadeira{
     constructor(numero_, fileira_, posx, posy){
+        this.tag = fileira_.letra + numero_;
         this.numero = numero_;
         this.fileira = fileira_;
         this.ocupada = 'vazia';
@@ -41,9 +42,11 @@ class Cadeira{
     clicada(){
         if(this.ocupada == 'selecionada'){
             this.ocupada = 'vazia';
+            compra.remover(this);
         }
         else if(this.ocupada == 'vazia'){
             this.ocupada = 'selecionada';
+            compra.adicionar(this);
         }
     }
 
